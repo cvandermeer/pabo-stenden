@@ -1,0 +1,11 @@
+<%= form_for @question do |f| %>
+	
+	<%= f.label :title %>
+	<%= f.text_field :title %>
+
+	<%= f.label :body, "Discrition" %>
+	<%= f.text_area :body %>
+
+	<%= submit_tag %>
+
+<% end %>	
