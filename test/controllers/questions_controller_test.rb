@@ -14,4 +14,9 @@ class QuestionsControllerTest < ActionController::TestCase
 		assert_redirected_to new_question_path "Was not redirected to new question path"
 		assert_equal "Je vraag is aangemaakt!", flash[:notice], "Incorrect flash notice"
 	end
+
+	test "should get index" do
+		get :index
+		assert_response :success
+	end
 end
