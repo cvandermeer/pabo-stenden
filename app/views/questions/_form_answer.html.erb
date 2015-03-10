@@ -1,0 +1,10 @@
+<%= form_for @answer, :url => {:controller => 'answers', :action => 'create'} do |f| %>
+
+	<%= f.label :body, "Answer" %>
+	<%= f.text_area :body %>
+
+	<%= f.hidden_field(:question_id, :value => params[:id]) %>
+
+	<%= submit_tag %>
+
+<% end %>	
