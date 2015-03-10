@@ -14,6 +14,10 @@ group :development, :test do
   gem 'web-console', '~> 2.0'
   gem 'spring'
   gem 'sqlite3'
+  gem 'minitest-reporters'
+	gem 'guard'
+	gem 'mini_backtrace'
+	gem 'guard-minitest'
 end
 
 group :production do
