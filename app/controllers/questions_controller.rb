@@ -16,7 +16,7 @@ class QuestionsController < ApplicationController
   def create 
     @question = Question.new(question_params)
     if @question.save
-      redirect_to questions_path, notice: "Je vraag is ingedient!"
+      redirect_to @question, notice: "Je vraag is ingedient!"
     else
       render "new"
     end

@@ -11,6 +11,7 @@ class QuestionsControllerTest < ActionController::TestCase
 		assert_difference("Question.count") do
 			post :create, question: {title: question.title, body: question.body}
 		end
+		assert_redirected_to question_path(assigns(:question)), "Not redirected to question"
 		assert_equal "Je vraag is ingedient!", flash[:notice], "Incorrect flash notice"
 	end
 
