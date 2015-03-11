@@ -1,7 +1,7 @@
 Pabo-Stenden 
 ============
 
-Contributors
+Made by Bridge Builders
 ------------
 
 	* Chris van der Meer
