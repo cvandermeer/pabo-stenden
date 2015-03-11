@@ -1,0 +1,10 @@
+<%= form_for @answer do |f| %>
+
+	<%= f.label :body, "Answer" %>
+	<%= f.text_area :body %>
+
+	<%= f.hidden_field(:question_id, :value => params[:id]) %>
+
+	<%= f.submit 'geef antwoord', data: { disable_with: 'Aan het versturen...' } %>
+
+<% end %>	

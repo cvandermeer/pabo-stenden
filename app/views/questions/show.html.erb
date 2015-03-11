@@ -1,0 +1,17 @@
+<h2><%= @question.title %></h2>
+
+<p>
+	<%= @question.body %>
+</p>
+
+<timestamp>
+	<%= @question.created_at %>
+</timestamp>
+
+<h2>All answers</h2>
+
+<% @question.answers.each do |answer| %>
+	<p><%= answer.body %></p>
+<% end %>
+
+<%= render "answers/form" %>
