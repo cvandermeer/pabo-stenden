@@ -19,6 +19,8 @@ gem 'turbolinks'
 gem 'sdoc', '~> 0.4.0', group: :doc
 # Sdoc geeft informatie terug over bepaalde commands in de terminal
 
+gem 'devise'
+
 group :development, :test do
 gem 'byebug'
 # Byebug geeft foutmelding weer voor het debuggen van de applicatie	
