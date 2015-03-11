@@ -5,4 +5,10 @@ class AnswersControllerTest < ActionController::TestCase
 		get :new
 		assert_response :success
 	end
+
+
+	test "should have a new h1" do
+		get :new
+		assert_select "h1", "Stel je vraag"
+	end
 end
