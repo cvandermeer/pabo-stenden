@@ -1,12 +1,11 @@
 class AnswersController < ApplicationController
 
-	def create 
-
+	def create
 		@answer = Answer.new(answer_params)
 		if @answer.save
-			redirect_to(:controller => 'questions', :action => 'show', :id => @answer.question_id)		
+			redirect_to @answer.question, notice: "Antwoord is ingedient!"		
 		else
-			render(:controller => 'questions', :action => 'show', :id => @answer.question_id)
+			redirect_to :back
 		end
 	end 
 
@@ -15,5 +14,4 @@ class AnswersController < ApplicationController
 		def answer_params
 			params.require(:answer).permit(:body, :question_id)
 		end
-
 end

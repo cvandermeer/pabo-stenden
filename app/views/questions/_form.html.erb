@@ -6,6 +6,6 @@
 	<%= f.label :body, "Discrition" %>
 	<%= f.text_area :body %>
 
-	<%= submit_tag %>
+	<%= f.submit 'stel vraag', data: { disable_with: 'Aan het versturen...' } %>
 
 <% end %>	
