@@ -1,8 +1,8 @@
 require 'test_helper'
 
 class AnswerTest < ActiveSupport::TestCase
-	test "should not create answer without input" do
+	test "should not post answer without any input" do
 		answer = Answer.new
-		assert_not answer.save, "Saved an answer without any input"
+		assert_not answer.save, "Saved a answer without input"
 	end
 end
