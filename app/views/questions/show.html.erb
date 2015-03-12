@@ -5,13 +5,14 @@
 </p>
 
 <timestamp>
-	<%= @question.created_at %>
+	Gesteld op s<%= @question.created_at.strftime("%H:%M %d-%m-%d") %>
 </timestamp>
 
-<h2>All answers</h2>
+<h2>Alle antwoorden</h2>
 
-<% @question.answers.each do |answer| %>
+<% @question.answers.reverse.each do |answer| %>
 	<p><%= answer.body %></p>
+	<p>Geantwoord op <%= answer.created_at.strftime("%H:%M %d-%m-%d") %></p>
 <% end %>
 
 <%= render "answers/form" %>
