@@ -1,6 +1,6 @@
 class Question < ActiveRecord::Base
 	### RELATIONS ###
-	has_many :answers
+	has_many :answers, dependent: :destroy
 
 	### VALIDATIONS ###
 	validates :title, presence: true
