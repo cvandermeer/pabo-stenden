@@ -1,11 +1,9 @@
 <%= form_for @question do |f| %>
 	
-	<%= f.label :title %>
-	<%= f.text_field :title %>
+	<%= f.text_field :title, :placeholder => "Vraag?" %>
 
-	<%= f.label :body, "beschrijving" %>
-	<%= f.text_area :body %>
+	<%= f.text_area :body, :placeholder => "Beschrijving van de vraag" %>
 
-	<%= f.submit 'stel vraag', data: { disable_with: 'Aan het versturen...' } %>
+	<%= f.submit 'Vraag stellen', data: { disable_with: 'Aan het versturen...' }, :class => 'btn submit' %>
 
 <% end %>	

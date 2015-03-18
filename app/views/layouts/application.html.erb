@@ -2,17 +2,35 @@
 <html>
 <head>
   <title>PaboStenden</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/>
+
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
-<h1>Pabo-stenden</h1>
 
-<p class="notice"><%= notice %></p>
-<p class="alert"><%= alert %></p>
+<header>
+	<h1 class="logo">Pabo-stenden</h1>
+	<div class="back">
+		<%= link_to "Back", :back %>
+	</div>
+	<div class="menu-btn">
+		<span></span>
+		<span></span>
+		<span></span>
+	</div>
+</header>
+<% if notice %>
+	<p class="notice"><%= notice %></p>
+<% end %>	
+	<p class="alert"><%= alert %></p>
 
-<%= yield %>
+<%= render 'partials/menu' %>
+
+<div class="content">
+	<%= yield %>
+</div>
 
 </body>
 </html>
