@@ -43,7 +43,7 @@ header {
 
 .logo {
 	text-indent: -10000px;
-	background: url(logo.png);
+	background: url('/assets/logo.png');
 	width: 97px;
 	height: 32px;
 	margin: 0 auto;
@@ -87,7 +87,7 @@ header {
 	margin-top: -$spacing;
 	&:before {
 		content: '';
-		background: url(arrow.png);
+		background: url('/assets/arrow.png');
 		display: block;
 		width: 20px;
 		height: 15px;
@@ -169,7 +169,7 @@ header {
 		}
 		&:after {
 			content: '';
-			background: url(star.png);
+			background: url('assets/star.png');
 			display: block;
 			width: 19px;
 			height: 18px;
