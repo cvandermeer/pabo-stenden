@@ -3,12 +3,9 @@
 </div>
 
 <div class="question">
-	<span>
-		Door: <%= current_user.email %>
-	</span>
 	<h2><%= @question.title %></h2>
 	<span>
-		<%= @question.answers.count %> antwoord(en)
+		<%= current_user.email %>
 	</span>
 	<% if @question.body? %>
 		<p>
@@ -17,7 +14,7 @@
 	<% end %>
 </div>
 
-<ul class="answers">
+<ul class="answers clearfix">
 	<% @question.answers.reverse.each do |answer| %>
 		<li class="<%= cycle('odd', 'even') %>">
 			<span><%= current_user.email %> zei op <%= answer.created_at.strftime("%d-%m-%d") %> om <%= answer.created_at.strftime("%H:%M") %></span>
