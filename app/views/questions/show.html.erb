@@ -4,7 +4,7 @@
 
 <div class="question">
 	<span>
-		Door: <%= current_user.email %>
+		Door: <%= @question.user.email %>
 	</span>
 	<h2><%= @question.title %></h2>
 	<span>
@@ -20,7 +20,7 @@
 <ul class="answers">
 	<% @question.answers.reverse.each do |answer| %>
 		<li class="<%= cycle('odd', 'even') %>">
-			<span><%= current_user.email %> zei op <%= answer.created_at.strftime("%d-%m-%d") %> om <%= answer.created_at.strftime("%H:%M") %></span>
+			<span><%= answer.user.email %> zei op <%= answer.created_at.strftime("%d-%m-%d") %> om <%= answer.created_at.strftime("%H:%M") %></span>
 			<%= answer.body %>
 		</li>
 	<% end %>
