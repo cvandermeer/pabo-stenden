@@ -2,7 +2,7 @@
 	<% @questions.each do |question| %>
 		<li>
 			<span>
-				Door: <%# question.user.name %>
+				Door: <%= current_user.email %>
 			</span>
 				<%= link_to question.title, question %>
 			<span>
