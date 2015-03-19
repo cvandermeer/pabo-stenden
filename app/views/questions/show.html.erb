@@ -1,18 +1,31 @@
-<h2><%= @question.title %></h2>
+<div class="avatar">
+	<%# user.profile-picture %>
+</div>
 
-<p>
-	<%= @question.body %>
-</p>
+<div class="question">
+	<span>
+		Door: <%= current_user.email %>
+	</span>
+	<h2><%= @question.title %></h2>
+	<span>
+		<%= @question.answers.count %> antwoord(en)
+	</span>
+	<% if @question.body? %>
+		<p>
+			<%= @question.body %>
+		</p>
+	<% end %>
+</div>
 
-<timestamp>
-	Gesteld op <%= @question.created_at.strftime("%H:%M %d-%m-%d") %>
-</timestamp>
+<ul class="answers">
+	<% @question.answers.reverse.each do |answer| %>
+		<li class="<%= cycle('odd', 'even') %>">
+			<span><%= current_user.email %> zei op <%= answer.created_at.strftime("%d-%m-%d") %> om <%= answer.created_at.strftime("%H:%M") %></span>
+			<%= answer.body %>
+		</li>
+	<% end %>
+</ul>
 
-<h2>Alle antwoorden</h2>
-
-<% @question.answers.reverse.each do |answer| %>
-	<p><%= answer.body %></p>
-	<p>Geantwoord op <%= answer.created_at.strftime("%H:%M %d-%m-%d") %></p>
-<% end %>
-
-<%= render "answers/form" %>
+<div class="answer-form">
+	<%= render "answers/form" %>
+</div>
