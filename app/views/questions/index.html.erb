@@ -1,5 +1,16 @@
-<ul>
-  <% @questions.each do |question| %>
-    <li><%= question.title %></li>
-  <% end %>
-</ul>
+<h1>Questions:</h1>
+
+<% @questions.reverse.each do |question| %>
+  <p>
+    <h4><%= link_to question.title, question %></h4>
+
+    <small>
+      <%= link_to "Edit", edit_question_path(question) %> | 
+      <%= link_to "Delete", question, :method => :delete, data: { :confirm => "Are you sure?" } %> |
+      Placed <%= time_ago_in_words question.created_at %> ago
+    </small><hr>  
+  </p>
+<% end %>
+
+<br />
+<p><%= link_to "Add question", new_question_path %></p>

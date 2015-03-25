@@ -1,0 +1,19 @@
+<%= form_for @question do |question| %>
+  <% if @question.errors.any? %>
+    <p>
+      <% @question.errors.full_messages.each do |message| %>
+        <small style="color:red">*<%= message %></small>
+      <% end %>
+    </p>
+  <% end %>
+  <p>
+    <%= question.label :title %><br />
+    <%= question.text_field :title %>
+  </p>
+  <p>
+    <%= question.label :body %><br />
+    <%= question.text_area :body %>
+  </p>
+  <p>
+    <%= question.submit "Submit" %><%= link_to "indexpage", questions_path %>
+<% end %>
