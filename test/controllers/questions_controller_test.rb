@@ -14,7 +14,7 @@ class QuestionsControllerTest < ActionController::TestCase
 			post :create, question: {title: question.title, body: question.body}
 		end
 		assert_redirected_to question_path(assigns(:question)), "Not redirected to question"
-		assert_equal "Je vraag is ingedient!", flash[:notice], "Incorrect flash notice"
+		assert_equal "Je vraag is ingediend!", flash[:notice], "Incorrect flash notice"
 	end
 
 	test "should get index" do

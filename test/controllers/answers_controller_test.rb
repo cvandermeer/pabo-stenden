@@ -7,6 +7,6 @@ class AnswersControllerTest < ActionController::TestCase
 		assert_difference("Answer.count") do
 			post :create, answer: {body: answer.body, question_id: answer.question}
 		end
-		assert_equal "Antwoord is ingedient!", flash[:notice], "Incorrect flash notice"
+		assert_equal "Antwoord is ingediend!", flash[:notice], "Incorrect flash notice"
 	end
 end
