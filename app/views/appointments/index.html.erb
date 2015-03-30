@@ -7,13 +7,12 @@
 	<h2><%= date.strftime('%est of %B %Y') %></h2>
 	<% @appointments.where(date: date).each do |appointment| %>
 		<%= link_to appointment do %>
-			<div class='appointment'>
+			<div class='appointment' style="background:<%= appointment.agenda.color %>">
 				<%= appointment.title %>
-				<%= appointment.body %>
 				<%= appointment.start_time.strftime('%k:%M') %>
 				<%= appointment.end_time.strftime('%k:%M') %>
 				<%= appointment.location %>
-				<%= appointment.date.strftime('%est of %B %Y') %>
+				Agenda: <%= appointment.agenda.title %>
 			</div>
 		<% end %>
 	<% end %>

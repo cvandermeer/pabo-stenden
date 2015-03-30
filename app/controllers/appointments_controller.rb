@@ -3,7 +3,7 @@ class AppointmentsController < ApplicationController
 	before_action :set_appointment, only: [:edit, :show, :update, :destroy]
 
 	def index
-		@appointments = Appointment.all
+		@appointments = Appointment.all.order(:date)
 		@todays_appointments = @appointments.group_by(&:date)
 	end
 
@@ -42,7 +42,7 @@ class AppointmentsController < ApplicationController
 
 	private
 		def appointment_params
-			params.require(:appointment).permit(:title, :body, :date, :start_time, :end_time, :location)
+			params.require(:appointment).permit(:title, :body, :date, :start_time, :end_time, :location, :agenda_id)
 		end
 
 		def set_appointment

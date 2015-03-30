@@ -5,5 +5,6 @@
 	<%= f.time_field :start_time, placeholder: 'Begintijd' %>
 	<%= f.time_field :end_time, placeholder: 'Eindtijd' %>
 	<%= f.text_field :location, placeholder: 'Locatie' %>
+	<%= f.collection_select(:agenda_id, Agenda.all, :id, :title) %>
 	<%= f.submit 'Aanmaken', data: { disable_with: 'Aan het versturen...' } %>
 <% end %>

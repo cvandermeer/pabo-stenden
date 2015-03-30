@@ -4,4 +4,5 @@ Rails.application.routes.draw do
 	resources :questions, path: 'vragen'
 	resources :answers, path: 'antwoorden'
 	resources :appointments, path: 'afspraken'
+	resources :agendas, path: 'agendas'
 end

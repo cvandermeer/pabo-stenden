@@ -11,7 +11,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150330090735) do
+ActiveRecord::Schema.define(version: 20150330125258) do
+
+  create_table "agendas", force: :cascade do |t|
+    t.string  "title"
+    t.string  "color"
+    t.integer "user_id"
+  end
 
   create_table "answers", force: :cascade do |t|
     t.text     "body"
@@ -21,12 +27,13 @@ ActiveRecord::Schema.define(version: 20150330090735) do
   end
 
   create_table "appointments", force: :cascade do |t|
-    t.string "title"
-    t.text   "body"
-    t.string "location"
-    t.date   "date"
-    t.time   "start_time"
-    t.time   "end_time"
+    t.string  "title"
+    t.text    "body"
+    t.string  "location"
+    t.date    "date"
+    t.time    "start_time"
+    t.time    "end_time"
+    t.integer "agenda_id"
   end
 
   create_table "questions", force: :cascade do |t|
