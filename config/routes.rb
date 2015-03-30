@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   devise_for :users
-	root to: "questions#index"
+	root to: "static_pages#dashboard"
 	resources :questions, path: "vragen"
 	resources :answers, path: "antwoorden"
 end
