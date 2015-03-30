@@ -2,8 +2,11 @@
 	<%= f.text_field :title, placeholder: 'Voer de titel in' %>
 	<%= f.text_area :body, placeholder: 'Beschrijving' %>
 	<%= f.text_field :date, placeholder: 'Datum' %>
-	<%= f.time_field :start_time, placeholder: 'Begintijd' %>
-	<%= f.time_field :end_time, placeholder: 'Eindtijd' %>
+	<div class="bootstrap-timepicker">
+		<%= f.text_field :start_time, placeholder: 'Begintijd' %>
+		<span class='add-on'><i class='icon-time'></i></span>
+	</div>
+	<%= f.text_field :end_time, placeholder: 'Eindtijd' %>
 	<%= f.text_field :location, placeholder: 'Locatie' %>
 	<%= f.collection_select(:agenda_id, Agenda.all, :id, :title) %>
 	<%= f.submit 'Aanmaken', data: { disable_with: 'Aan het versturen...' } %>
