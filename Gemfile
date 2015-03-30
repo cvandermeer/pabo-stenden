@@ -22,6 +22,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'devise'
 
 gem 'jquery-ui-rails'
+gem 'jquery-timepicker-rails'
 
 group :development, :test do
 	gem 'byebug'

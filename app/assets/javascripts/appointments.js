@@ -7,6 +7,8 @@ ready = function() {
 		});
 	});
 
+	$('#appointment_start_time').timepicker({ 'timeFormat': 'H:i' });
+	$('#appointment_end_time').timepicker({ 'timeFormat': 'H:i'});
 
 };
 
