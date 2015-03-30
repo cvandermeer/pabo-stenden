@@ -22,18 +22,18 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'devise'
 
 group :development, :test do
-gem 'byebug'
-# Byebug geeft foutmelding weer voor het debuggen van de applicatie	
-gem 'web-console', '~> 2.0'
-# Web console is een debugging tool
-gem 'spring'
-# Spring maakt het mogelijk om een rails server snel optestarten
-gem 'sqlite3'
-# Sqlite is een light weight database
-gem 'minitest-reporters'
-gem 'guard'
-gem 'mini_backtrace'
-gem 'guard-minitest'
+	gem 'byebug'
+	# Byebug geeft foutmelding weer voor het debuggen van de applicatie	
+	gem 'web-console', '~> 2.0'
+	# Web console is een debugging tool
+	gem 'spring'
+	# Spring maakt het mogelijk om een rails server snel optestarten
+	gem 'sqlite3'
+	# Sqlite is een light weight database
+	gem 'minitest-reporters'
+	gem 'guard'
+	gem 'mini_backtrace'
+	gem 'guard-minitest'
 end
 
 group :production do

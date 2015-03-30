@@ -1,0 +1,14 @@
+<h1>Afspraken</h1>
+
+<p>
+	<% @appointments.each do |appointment| %>
+		<%= appointment.title %>
+		<%= appointment.body %>
+		<%= appointment.date %>
+		<%= appointment.start_time %>
+		<%= appointment.end_time %>
+		<%= appointment.location %>
+	<% end %>
+</p>
+
+<p><%= link_to 'Nieuwe afspraak aanmaken', new_appointment_path %></p>

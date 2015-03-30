@@ -11,7 +11,9 @@
 <body>
 
 <header>
-	<%= link_to root_path do %><h1 class="logo">Pabo-stenden</h1><% end %>
+	<%= link_to root_path do %>
+		<h1 class="logo">Pabo-stenden</h1>
+	<% end %>
 	<div class="back">
 		<%= link_to "Back", :back %>
 	</div>
@@ -26,7 +28,7 @@
 <% end %>	
 	<p class="alert"><%= alert %></p>
 
-	<%= render 'layouts/menu' %>
+	<%= render 'layouts/questions_menu' %>
 
 <div class="content">
 	<%= yield %>

@@ -1,4 +1,4 @@
-class AppointmentsController < AppointmentsController
+class AppointmentsController < ApplicationController
 	before_action :authenticate_user!
 	before_action :set_appointment, only: [:edit, :show, :update, :destroy]
 
