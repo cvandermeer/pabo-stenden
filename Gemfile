@@ -21,6 +21,8 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 gem 'devise'
 
+gem 'jquery-ui-rails'
+
 group :development, :test do
 	gem 'byebug'
 	# Byebug geeft foutmelding weer voor het debuggen van de applicatie	
