@@ -1,32 +1,42 @@
 require 'test_helper'
 
 class QuestionsControllerTest < ActionController::TestCase
+	setup :login_user, :set_question 
+
 	test "should get new" do
-		sign_in users(:one)
 		get :new
 		assert_response :success
 	end
 
 	test "should be able to create question" do
-		sign_in users(:one)
-		question = questions(:question1)
 		assert_difference("Question.count") do
-			post :create, question: {title: question.title, body: question.body}
+			post :create, question: {title: @question.title, body: @question.body, user: @question.user}
 		end
 		assert_redirected_to question_path(assigns(:question)), "Not redirected to question"
 		assert_equal "Je vraag is ingediend!", flash[:notice], "Incorrect flash notice"
 	end
 
+	test "should show question" do
+    get :show, id: @question
+    assert_response :success
+  end
+
 	test "should get index" do
-		sign_in users(:one)
 		get :index
 		assert_response :success
 	end
 
 	test "should get new question link" do
-		sign_in users(:one)
-		question = questions(:question1)
-		get(:show, {id: question})
+		get(:show, {id: @question})
 		assert_response :success
 	end
+
+	private
+		def login_user
+			sign_in users(:one)
+		end
+
+		def set_question
+			@question = questions(:question1)
+		end
 end

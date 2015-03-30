@@ -5,4 +5,5 @@ class Question < ActiveRecord::Base
 
 	### VALIDATIONS ###
 	validates :title, presence: true
+	validates :user, presence: true
 end
