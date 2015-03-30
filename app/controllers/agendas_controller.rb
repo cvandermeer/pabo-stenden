@@ -42,7 +42,7 @@ class AgendasController < ApplicationController
 
 	private
 		def agenda_params
-			params.require(:agenda).permit(:title, :color, :user_id)
+			params.require(:agenda).permit(:title, :color)
 		end
 
 		def set_agenda

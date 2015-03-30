@@ -5,5 +5,4 @@ class Answer < ActiveRecord::Base
 	### VALIDATIONS ###
 	validates :body, presence: true
 	validates :user, presence: true
-
 end
