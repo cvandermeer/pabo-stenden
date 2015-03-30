@@ -4,7 +4,7 @@ class AppointmentsController < ApplicationController
 
 	def index
 		@appointments = Appointment.all
-		
+		@todays_appointments = @appointments.group_by(&:date)
 	end
 
 	def show
