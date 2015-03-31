@@ -2,7 +2,7 @@
 <html>
 <head>
   <title>PaboStenden</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/>
+  <meta name='viewport' content='width=device-width, initial-scale=1, user-scalable=no'/>
 
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
@@ -12,25 +12,25 @@
 
 <header>
 	<%= link_to root_path do %>
-		<h1 class="logo">Pabo-stenden</h1>
+		<h1 class='logo'>Pabo-stenden</h1>
 	<% end %>
-	<div class="back">
-		<%= link_to "Back", :back %>
+	<div class='back'>
+		<%= link_to 'Back', :back %>
 	</div>
-	<div class="menu-btn">
+	<div class='menu-btn'>
 		<span></span>
 		<span></span>
 		<span></span>
 	</div>
 </header>
 <% if notice %>
-	<p class="notice"><%= notice %></p>
+	<p class='notice'><%= notice %></p>
 <% end %>	
-	<p class="alert"><%= alert %></p>
+	<p class='alert'><%= alert %></p>
 
-	<%= render 'layouts/questions_menu' %>
+	<%= render 'layouts/questions_menu' if controller.controller_name == 'questions' %>
 
-<div class="content">
+<div class='content'>
 	<%= yield %>
 </div>
 
