@@ -8,7 +8,8 @@ set :ssh_options, {
 }
 set :pty, true
 set :linked_files, %w{config/database.yml .rbenv-vars .ruby-version}
-set :linked_dirs, %w{bin log tmp/pids tmp/cache tmp/sockets vendor/bundle public/system}
+set :bundle_binstubs, nil
+set :linked_dirs, %w{log tmp/pids tmp/cache tmp/sockets vendor/bundle public/system}
 set :default_env, { path: "/opt/rbenv/shims:$PATH" }
 set :keep_releases, 5
 namespace :deploy do
