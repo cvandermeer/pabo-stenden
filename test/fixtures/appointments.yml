@@ -1,0 +1,8 @@
+appointment1:
+  body: Laptop meenemen!
+  title: Mentorgesprek
+  date: 2015-04-22
+  start_time: 2000-01-01 00:12:00
+  end_time: 2000-01-01 00:12:30
+  location: d3.030
+  agenda: agenda1
