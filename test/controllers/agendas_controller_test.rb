@@ -20,6 +20,16 @@ class AgendasControllerTest < ActionController::TestCase
 		assert_redirected_to agendas_path
 	end
 
+	test "should get edit" do
+    get :edit, id: @agenda
+    assert_response :success
+  end
+
+  test "should update agenda" do
+    patch :update, id: @agenda, agenda: { title: @agenda.title, color: @agenda.color }
+    assert_redirected_to agendas_path
+  end
+
 	private
 		def login_user
 			sign_in users(:one)
