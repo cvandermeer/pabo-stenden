@@ -1,6 +1,7 @@
 class Appointment < ActiveRecord::Base
 	### RELATIONS ###
 	belongs_to :agenda
+  belongs_to :user
 
 	### VALIDATIONS ###
 	validates :title, presence: true

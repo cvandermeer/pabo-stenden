@@ -3,7 +3,7 @@ class AppointmentsController < ApplicationController
 	before_action :set_appointment, only: [:edit, :show, :update, :destroy]
 
 	def index
-		@appointments = Appointment.all.order(:date)
+		@appointments = Appointment.where(user: current_user).order(:date)
 		@todays_appointments = @appointments.group_by(&:date)
 	end
 
@@ -16,6 +16,7 @@ class AppointmentsController < ApplicationController
 
 	def create
 		@appointment = Appointment.new(appointment_params)
+		@appointment.user = current_user
 		if @appointment.save
 			redirect_to appointments_path, notice: 'Afgespraak aangemaakt'
 		else
