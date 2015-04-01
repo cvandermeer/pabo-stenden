@@ -12,6 +12,7 @@ $fontFamily: Arial, Helvetica, sans-serif;
 
 $spacing: 30px;
 
+
 /* Framework */
 
 ul {
@@ -28,8 +29,8 @@ body {
 }
 
 .content {
-	margin: $spacing/2 0;
-	border-top: 1px solid $basicColor; 
+	//margin: $spacing/2 0;
+	//border-top: 1px solid $basicColor; 
 	overflow: hidden;
 }
 
@@ -38,15 +39,30 @@ body {
 header {
 	position: relative;
 	padding: 5px;
-	background: $bgDarkGray;
+	height: 35px;
+	background: #fff;
+	&:after {
+		content: '';
+		position: absolute;
+		width: 100%;
+		max-width: 320px;
+		height: 26px;
+		background: asset_url('menu-shadow.png') no-repeat;
+		bottom: -26px;
+		margin: 0 auto;
+		left: 0;
+		right: 0;
+		z-index: 1;
+	}
 }
 
 .logo {
 	text-indent: -10000px;
-	background: asset_url('logo.png');
-	width: 97px;
-	height: 32px;
+	background: asset_url('logo.png') no-repeat;
+	width: 87px;
+	height: 30px;
 	margin: 0 auto;
+	margin-top: 2px;
 }
 
 .menu-btn {
@@ -76,25 +92,14 @@ header {
 }
 
 .back {
-	width: 25px;
-	height: 25px;
-	border: 1px solid $basicColor;
-	border-radius: 100%;
+	width: 30px;
+	height: 30px;
 	text-indent: -1000px;
+	background: asset_url('back.png') no-repeat;
 	display: block;
 	position: relative;
 	float: left;
 	margin-top: -$spacing;
-	&:before {
-		content: '';
-		background: asset_url('arrow.png');
-		display: block;
-		width: 20px;
-		height: 15px;
-		top: 5px;
-  	left: 3px;
-  	position: absolute;
-	}
 	a {
 		display: block;
 		height: 100%;
@@ -109,7 +114,7 @@ header {
 	border: 1px solid $basicColor;
 	//border-radius: 4px; 
 	overflow: hidden;
-	margin: 0 auto;
+	margin: $spacing/2 auto;
 	li {
 		width: 50%;
 		float: left;
@@ -312,3 +317,201 @@ textarea {
 	padding:10px;
 	margin-top:2px;
 }
+
+/* Dashboard */
+
+.meldingen {
+	background: asset_url('header-image.png') no-repeat;
+	width: 100%;
+	height: 134px;
+	margin: 0 auto;
+	padding: 25px 0 0;
+	max-width: 320px;
+	position: relative;
+	&:before,
+	&:after {
+		width: 100%;
+		height: 159px;
+		content: '';
+		position: absolute;
+		right: 100%;
+		top: 0;
+		background: #d04731;
+	}
+	&:after {
+		right: -100%;
+	}
+	p {
+		font-size: 12px;
+		text-transform: uppercase;
+		color: #fff;
+		font-weight: 700;
+		text-indent: $spacing/2;
+	}
+	ul {
+		padding: 0 $spacing/2;
+		li {
+			color: #fff;
+			width: 33.3%;
+			list-style: none;
+			float: left;
+			text-align: center;
+			text-transform: uppercase;
+			font-size: 10px;
+			&:nth-child(2) {
+				box-sizing:border-box;
+  			-moz-box-sizing:border-box;
+  			-webkit-box-sizing:border-box;
+				border-left: 1px solid #fff;
+				border-right: 1px solid #fff;
+			}
+			span {
+				font-size: 40px;
+				width: 100%;
+				//text-align: center;
+				display: block;
+				margin-bottom: $spacing/4;
+			}
+		}
+	}
+}
+
+.dashboard {
+	margin: $spacing/2 0;
+	li {
+		width: 33.3%;
+		height: 100px;
+		float: left;
+		list-style: none;
+		position: relative;
+		margin-bottom: $spacing/2;
+		a {
+			width: 100px;
+			height: 30px;
+			padding-top: 70px;
+			margin: 0 auto;
+			display: block;
+			color: #b43726;
+			background: linear-gradient(#ed4f30, #be3727);
+			text-transform: uppercase;
+			text-decoration: none;
+			text-align: center;
+			font-weight: 900;
+			font-size: 14px;
+			&:after {
+				content: '';
+				position: absolute;
+				margin: 15px auto;
+				left: 0;
+				right: 0;
+				margin-top: -55px;
+			}
+		}
+		&:last-child {
+			width: 100%;
+		}
+	}
+	.vraag {
+		a:after {
+			background: asset_url('vraag.png');
+			width: 60px;
+			height: 49px;
+		}
+	}
+	.vragen {
+		a:after {
+			background: asset_url('vragen.png');
+			width: 68px;
+			height: 47px;
+		}
+	}
+	.hulp {
+		a:after {
+			background: asset_url('hulp.png');
+			width: 60px;
+			height: 44px;
+		}
+	}
+	.calender {
+		a:after {
+			background: asset_url('calender.png');
+			width: 57px;
+			height: 49px;
+		}
+	}
+}
+
+
+/* Clear Floated Elements 
+------------------------------------------------------*/
+
+.clear {
+	clear: both;
+	display: block;
+	overflow: hidden;
+	visibility: hidden;
+	width: 0;
+	height: 0;
+}
+
+.clearfix:after {
+	clear: both;
+	content: ' ';
+	display: block;
+	font-size: 0;
+	line-height: 0;
+	visibility: hidden;
+	width: 0;
+	height: 0;
+}
+
+/* END Clear floated elements */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

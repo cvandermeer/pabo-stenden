@@ -1,3 +1,38 @@
-<p><%= link_to "Vragen & Antwoorden", questions_path %></p>
-<p><%= link_to "Afspraken", appointments_path %></p>
-<p><%= link_to "Agendas", agendas_path %></p>
+<div class="meldingen">
+	<p>Welkom <%# current_user.name %>, U heeft:
+	<ul>
+		<li>
+			<span>
+				<%= current_user.questions.count %>
+			</span>
+			Vragen?
+		</li>
+		<li>
+			<span>
+				<%= current_user.answers.count %>
+			</span>
+			Antwoorden
+		</li>
+		<li>
+			<span>
+				<%= current_user.appointments.count %>
+			</span>
+			Afspraken
+		</li>
+	</ul>
+</div>
+
+<ul class="dashboard clearfix">
+	<li class="vragen">
+		<%= link_to "Vragen", questions_path %>
+	</li>
+	<li class="vraag">
+		<%= link_to "Vraag?", new_question_path %>
+	</li>
+	<li class="calender">
+		<%= link_to "Afspraken", appointments_path %>
+	</li>
+	<li class="hulp">
+		<%= link_to "Hulp", root_path %>
+	</li>
+</ul>

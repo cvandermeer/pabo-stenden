@@ -23,12 +23,16 @@
 		<span></span>
 	</div>
 </header>
+
 <% if notice %>
 	<p class='notice'><%= notice %></p>
-<% end %>	
-	<p class='alert'><%= alert %></p>
+<% end %>
 
-	<%= render 'layouts/questions_menu' if controller.controller_name == 'questions' %>
+<% if alert %>	
+	<p class='alert'><%= alert %></p>
+<% end %>
+
+<%= render 'layouts/questions_menu' if controller.controller_name == 'questions' %>
 
 <div class='content'>
 	<%= yield %>
