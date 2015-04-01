@@ -7,7 +7,7 @@ set :ssh_options, {
   forward_agent: true
 }
 set :pty, true
-set :linked_files, %w{config/database.yml .rbenv-vars .ruby-version}
+set :linked_files, %w{.rbenv-vars .ruby-version}
 set :linked_dirs, %w{bin log tmp/pids tmp/cache tmp/sockets vendor/bundle public/system}
 set :default_env, { path: "/opt/rbenv/shims:$PATH" }
 set :keep_releases, 5
