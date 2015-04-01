@@ -1,8 +1,8 @@
 lock '3.2.1'
 
-set :application, 'pabo-stenden'
+set :application, 'pabo-stenden2'
 set :repo_url, 'git@github.com:cvandermeer/pabo-stenden.git'
-set :deploy_to, '/u/apps/pabo-stenden_production'
+set :deploy_to, '/u/apps/pabo-stenden2_production'
 set :ssh_options, {
   forward_agent: true
 }
