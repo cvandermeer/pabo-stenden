@@ -1,0 +1,10 @@
+<h1>Agenda's</h1>
+
+<%= link_to 'Agenda aanmaken', new_agenda_path %>
+
+<% @agendas.each do |agenda| %>
+	<div class='appointment' style="background:<%= agenda.color %>">
+		<%= agenda.title %>
+		<%= link_to 'Aanpassen', edit_agenda_path(agenda) %>
+	</div>
+<% end %>

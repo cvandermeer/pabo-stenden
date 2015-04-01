@@ -104,7 +104,7 @@ header {
   opacity: 0.4;
 	&:before {
 		content: '';
-		background: url(arrow.png);
+		background: asset_url('arrow.png');
 		display: block;
 		width: 20px;
  		height: 37px;
@@ -330,6 +330,7 @@ textarea {
   color: $textBlank;
   text-transform: uppercase;
   font-size: 12px;
+  height: 2%;
 }
 
 
@@ -351,38 +352,10 @@ textarea {
 	}
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+.appointment{
+	width: 100%;
+	height:30px;
+	background:white;
+	padding:10px;
+	margin-top:2px;
+}

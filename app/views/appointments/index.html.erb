@@ -1,0 +1,19 @@
+<h1>Afspraken</h1>
+
+<p><%= link_to 'Nieuwe afspraak aanmaken', new_appointment_path %></p>
+
+
+<% @todays_appointments.each do |date, appointments| %>
+	<h2><%= date.strftime('%est of %B %Y') %></h2>
+	<% @appointments.where(date: date).each do |appointment| %>
+		<%= link_to appointment do %>
+			<div class='appointment' style="background:<%= appointment.agenda.color %>">
+				<%= appointment.title %>
+				<%= appointment.start_time.strftime('%k:%M') %>
+				<%= appointment.end_time.strftime('%k:%M') %>
+				<%= appointment.location %>
+				Agenda: <%= appointment.agenda.title %>
+			</div>
+		<% end %>
+	<% end %>
+<% end %>

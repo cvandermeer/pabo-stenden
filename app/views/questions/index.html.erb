@@ -1,9 +1,11 @@
 <ul class="questions-overview">
 	<% @questions.each do |question| %>
 		<li>
-				<%= link_to question.title, question %>
 			<span>
-				<%= current_user.email %> 
+				Door: <%= question.user.email %>
+			</span>
+				<%= link_to question.title, question %>
+			<span> 
 				<% if question.answers.count < 1 %>
 					<span class="red">
 				<% else %>

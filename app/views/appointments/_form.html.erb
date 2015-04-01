@@ -1,0 +1,12 @@
+<%= form_for @appointment do |f| %>
+	<%= f.text_field :title, placeholder: 'Voer de titel in' %>
+	<%= f.text_area :body, placeholder: 'Beschrijving' %>
+	<%= f.text_field :date, placeholder: 'Datum' %>
+	<%= f.text_field :start_time, placeholder: 'Begintijd' %>
+	<%= f.text_field :end_time, placeholder: 'Eindtijd' %>
+	<%= f.text_field :location, placeholder: 'Locatie' %>
+	<p>
+		Agenda: <%= f.collection_select(:agenda_id, Agenda.all, :id, :title) %>
+	</p>
+	<%= f.submit 'Aanmaken', data: { disable_with: 'Aan het versturen...' } %>
+<% end %>

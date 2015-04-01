@@ -3,8 +3,9 @@ class AnswersController < ApplicationController
 
 	def create
 		@answer = Answer.new(answer_params)
+		@answer.user = current_user
 		if @answer.save
-			redirect_to @answer.question, notice: "Antwoord is ingedient!"		
+			redirect_to @answer.question, notice: "Antwoord is ingediend!"		
 		else
 			redirect_to :back
 		end

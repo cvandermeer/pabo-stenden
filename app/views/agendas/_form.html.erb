@@ -1,0 +1,5 @@
+<%= form_for @agenda do |f| %>
+	<%= f.text_field :title, placeholder: 'Voer de titel van de agenda in' %>
+	<%= f.color_field :color %>
+	<%= f.submit 'Aanmaken', data: { disable_with: 'Aan het versturen...' } %>
+<% end %>
