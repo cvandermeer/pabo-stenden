@@ -1,7 +1,7 @@
 class TestQuestion < ActiveRecord::Base
 	### RELATIONS ###
 	belongs_to :test
-	has_many :test_answers
+	has_many :test_answers, dependent: :destroy
 
 	### VALIDATIONS ###
 	validates :title, presence: true
