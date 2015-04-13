@@ -24,6 +24,8 @@ gem 'devise'
 gem 'jquery-ui-rails'
 gem 'jquery-timepicker-rails'
 
+gem 'nested_form'
+
 group :development, :test do
 	gem 'byebug'
 	# Byebug geeft foutmelding weer voor het debuggen van de applicatie	

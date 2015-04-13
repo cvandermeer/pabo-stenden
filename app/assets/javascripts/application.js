@@ -14,5 +14,6 @@
 //= require jquery_ujs
 //= require jquery-ui
 //= require jquery.timepicker.js
+//= require jquery_nested_form
 //= require turbolinks
 //= require_tree .

@@ -18,7 +18,7 @@ class TestsController < ApplicationController
 		@test = Test.new(test_params)
 		@test.user = current_user
 		if @test.save
-			redirect_to tests_path, notice: 'Test is aangemaakt'
+			redirect_to @test, notice: 'Test is aangemaakt'
 		else
 			render :new
 		end
@@ -29,7 +29,7 @@ class TestsController < ApplicationController
 
 	def update
 		if @test.update(test_params)
-			redirect_to tests_path, notice: 'Test is aangepast'
+			redirect_to @test, notice: 'Test is aangepast'
 		else
 			render :edit
 		end
@@ -44,7 +44,7 @@ class TestsController < ApplicationController
 	private
 
 		def test_params
-			params.require(:test).permit(:title, :body)
+			params.require(:test).permit(:title, :body, test_questions_attributes: [:id, :title, :_destroy])
 		end
 
 		def set_test

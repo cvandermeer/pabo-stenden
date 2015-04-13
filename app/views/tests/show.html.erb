@@ -3,6 +3,14 @@
 	<%= @test.body %>
 </p>
 
+<ul>
+	<% @test.test_questions.each do |test_question| %>
+		<li>
+			<%= test_question.title %>
+		</li>
+	<% end %>
+</ul>
+
 <% if @test.user == current_user %>
 	<%= link_to 'Edit', edit_test_path(@test) %>
 <% end %>
