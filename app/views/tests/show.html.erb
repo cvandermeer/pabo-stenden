@@ -15,6 +15,7 @@
 				<% test_question.test_answers.each do |test_answer| %>
 					<li>
 						<%= test_answer.value %>
+						<%= '\/' if test_answer.correct_answer %>
 					</li>
 				<% end %>
 			</ul> 

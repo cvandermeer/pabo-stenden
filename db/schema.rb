@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150413111010) do
+ActiveRecord::Schema.define(version: 20150413133535) do
 
   create_table "agendas", force: :cascade do |t|
     t.string  "title"
@@ -47,6 +47,7 @@ ActiveRecord::Schema.define(version: 20150413111010) do
   create_table "test_answers", force: :cascade do |t|
     t.string  "value"
     t.integer "test_question_id"
+    t.boolean "correct_answer"
   end
 
   create_table "test_questions", force: :cascade do |t|
