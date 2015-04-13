@@ -16,6 +16,7 @@ class TestsController < ApplicationController
 
 	def create
 		@test = Test.new(test_params)
+		@test.user = current_user
 		if @test.save
 			redirect_to tests_path, notice: 'Test is aangemaakt'
 		else
@@ -36,14 +37,14 @@ class TestsController < ApplicationController
 
 	def destroy
 		@test.destroy	
-		redirect_to tests_path, :notice 'Test is gedelete'
+		redirect_to tests_path, notice: 'Test is gedelete'
 	end
 
 
 	private
 
 		def test_params
-			params.require(:test).permit(:title)
+			params.require(:test).permit(:title, :body)
 		end
 
 		def set_test

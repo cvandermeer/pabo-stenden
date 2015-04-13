@@ -52,7 +52,6 @@ ActiveRecord::Schema.define(version: 20150413111010) do
   create_table "test_questions", force: :cascade do |t|
     t.string  "title"
     t.integer "test_id"
-    t.text    "body"
     t.integer "correct_answer_id"
   end
 
@@ -66,6 +65,7 @@ ActiveRecord::Schema.define(version: 20150413111010) do
 
   create_table "tests", force: :cascade do |t|
     t.string  "title"
+    t.text    "body"
     t.integer "user_id"
   end
 

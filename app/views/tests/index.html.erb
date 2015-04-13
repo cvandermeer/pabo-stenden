@@ -1,0 +1,12 @@
+<ul>
+	<% @tests.each do |test| %>
+		<li>
+			<%= link_to test.title, test_path(test) %>
+		</li>
+	<% end %>
+</ul>
+
+<% if current_user.teacher %>
+	<%= link_to 'toets toevoegen', new_test_path %>
+<% end %>
+

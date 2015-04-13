@@ -5,4 +5,5 @@ Rails.application.routes.draw do
 	resources :answers, path: 'antwoorden'
 	resources :appointments, path: 'afspraken'
 	resources :agendas, path: 'agendas'
+	resources :tests, path: 'toetsen'
 end

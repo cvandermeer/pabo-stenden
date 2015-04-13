@@ -1,0 +1,8 @@
+<h2><%= @test.title %></h2>
+<p>
+	<%= @test.body %>
+</p>
+
+<% if @test.user == current_user %>
+	<%= link_to 'Edit', edit_test_path(@test) %>
+<% end %>
