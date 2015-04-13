@@ -44,7 +44,7 @@ class TestsController < ApplicationController
 	private
 
 		def test_params
-			params.require(:test).permit(:title, :body, test_questions_attributes: [:id, :title, :_destroy])
+			params.require(:test).permit(:title, :body, test_questions_attributes: [:id, :title, :_destroy, test_answers_attributes: [:id, :value, :_destroy]])
 		end
 
 		def set_test

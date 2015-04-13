@@ -6,7 +6,4 @@ class Test < ActiveRecord::Base
 	### VALIDATIONS ###
 	validates :title, presence: true
 	accepts_nested_attributes_for :test_questions, allow_destroy: true
-
-	
-
 end

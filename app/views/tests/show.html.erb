@@ -4,9 +4,21 @@
 </p>
 
 <ul>
+	
 	<% @test.test_questions.each do |test_question| %>
+	<h3>Vraag</h3>
 		<li>
-			<%= test_question.title %>
+			<%= test_question.title %> 
+			<% if test_question.test_answers.any? %>
+			<ul>
+				<h4>Antwoorden</h4>
+				<% test_question.test_answers.each do |test_answer| %>
+					<li>
+						<%= test_answer.value %>
+					</li>
+				<% end %>
+			</ul> 
+			<% end %>
 		</li>
 	<% end %>
 </ul>

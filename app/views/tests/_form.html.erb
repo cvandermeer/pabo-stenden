@@ -1,12 +1,17 @@
 <%= nested_form_for @test do |f| %>
+
 	<%= f.text_field :title, placeholder: 'Titel invoeren' %>
 	<%= f.text_area :body, placeholder: 'Toets beschrijving' %>
+	
 	<%= f.fields_for :test_questions do |test_question| %>
-		<%= test_question.text_field :title %>
-		<%= test_question.link_to_remove 'Verwijder vraag' %> 
+	<%= render 'test_question_fields', f: test_question %>
+		 
 	<% end %>
+	
 	<p>
 		<%= f.link_to_add 'Vraag toevoegen', :test_questions %>
 	</p>
+	
 	<%= f.submit %>
+
 <% end %>
