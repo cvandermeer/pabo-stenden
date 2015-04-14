@@ -8,4 +8,5 @@ Rails.application.routes.draw do
 	resources :tests, path: 'toetsen'
 	get 'tests/:id/take_test' => 'tests#take_test', as: 'take_test' 
 	resources :test_sessions
+	resources :test_session_questions
 end

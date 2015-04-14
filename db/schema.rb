@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150413133535) do
+ActiveRecord::Schema.define(version: 20150414121220) do
 
   create_table "agendas", force: :cascade do |t|
     t.string  "title"
@@ -54,6 +54,16 @@ ActiveRecord::Schema.define(version: 20150413133535) do
     t.string  "title"
     t.integer "test_id"
     t.integer "correct_answer_id"
+  end
+
+  create_table "test_session_answers", force: :cascade do |t|
+    t.integer "test_session_id"
+    t.integer "test_answer_id"
+  end
+
+  create_table "test_session_questions", force: :cascade do |t|
+    t.integer "test_session_id"
+    t.integer "test_answer_id"
   end
 
   create_table "test_sessions", force: :cascade do |t|

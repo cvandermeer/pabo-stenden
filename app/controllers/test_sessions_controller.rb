@@ -2,7 +2,7 @@ class TestSessionsController < ApplicationController
 	before_action :set_test_session
 
 	def show
-
+		@test_session_question = TestSessionQuestion.new
 	end
 
 	private

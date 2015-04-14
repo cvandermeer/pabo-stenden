@@ -4,13 +4,21 @@
 	<% @test_session.test.test_questions.each do |test_question| %>
 		<li>
 			<h4><%= test_question.title%></h4>
-			<ul>
-				<% test_question.test_answers.each do |test_answer| %>
-					<li>
-						<%= test_answer.value %>
-					</li>
-				<% end %>
-			</ul>
+			<%= form_for @test_session_question do |f| %>
+				<ul>
+					<% test_question.test_answers.each do |test_answer| %>
+						<li>
+							<%= test_answer.value %>
+							<%= test_answer.id %>
+							<%= f.radio_button :test_answer_id, test_answer.id %>
+
+
+						</li>
+					<% end %>
+				</ul>
+				<%= f.hidden_field :test_session_id, value: @test_session.id %>
+				<%= f.submit 'opslaan' %>
+			<% end %>
 		</li>		
 
 
