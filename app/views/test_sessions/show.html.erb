@@ -1,0 +1,18 @@
+<h2><%= @test_session.test.title %></h2>
+
+<ul>
+	<% @test_session.test.test_questions.each do |test_question| %>
+		<li>
+			<h4><%= test_question.title%></h4>
+			<ul>
+				<% test_question.test_answers.each do |test_answer| %>
+					<li>
+						<%= test_answer.value %>
+					</li>
+				<% end %>
+			</ul>
+		</li>		
+
+
+	<% end %>
+</ul>

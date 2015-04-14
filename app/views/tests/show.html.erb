@@ -27,3 +27,5 @@
 <% if @test.user == current_user %>
 	<%= link_to 'Edit', edit_test_path(@test) %>
 <% end %>
+
+<%= link_to 'Make the test', take_test_path(@test) %>

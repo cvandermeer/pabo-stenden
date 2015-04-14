@@ -1,6 +1,6 @@
 class TestsController < ApplicationController
 	before_action :authenticate_user!
-	before_action :set_test, only: [:show, :edit, :update, :destroy]
+	before_action :set_test, only: [:show, :edit, :update, :destroy, :take_test]
 	before_action :teacher_check, except: [:show, :index]
 
 	def index
@@ -38,6 +38,17 @@ class TestsController < ApplicationController
 	def destroy
 		@test.destroy	
 		redirect_to tests_path, notice: 'Test is gedelete'
+	end
+
+	def take_test
+		@test_session = TestSession.new
+		@test_session.test = @test
+		@test_session.user = current_user
+		if @test_session.save 
+			redirect_to @test_session
+		else
+			redirect_to @test
+		end
 	end
 
 
