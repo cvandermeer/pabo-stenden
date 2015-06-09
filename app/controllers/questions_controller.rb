@@ -18,7 +18,7 @@ class QuestionsController < ApplicationController
     @question = Question.new(question_params)
     @question.user = current_user
     if @question.save
-      redirect_to @question, notice: "Je vraag is ingediend!"
+      redirect_to @question, notice: 'Je vraag is ingediend!'
     else
       render "new"
     end
@@ -31,6 +31,6 @@ class QuestionsController < ApplicationController
     end
 
     def question_params
-      params.require(:question).permit(:title, :body, :user_id)
+      params.require(:question).permit(:title, :body)
     end
 end

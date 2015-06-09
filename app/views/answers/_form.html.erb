@@ -1,5 +1,5 @@
 <%= form_for @answer do |f| %>
 	<%= f.text_area :body, :placeholder => "Help je medestudent" %>
 	<%= f.hidden_field(:question_id, :value => params[:id]) %>
-	<%= f.submit 'Antwoorden', data: { disable_with: 'Aan het versturen...' }, :class => 'btn submit' %>
+	<%= f.submit 'Antwoorden', data: { disable_with: 'Aan het versturen...' }, class: 'btn submit' %>
 <% end %>	

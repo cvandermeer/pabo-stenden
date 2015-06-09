@@ -11,13 +11,30 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150319104842) do
+ActiveRecord::Schema.define(version: 20150401105655) do
+
+  create_table "agendas", force: :cascade do |t|
+    t.string  "title"
+    t.string  "color"
+    t.integer "user_id"
+  end
 
   create_table "answers", force: :cascade do |t|
     t.text     "body"
     t.integer  "question_id"
     t.datetime "created_at"
     t.integer  "user_id"
+  end
+
+  create_table "appointments", force: :cascade do |t|
+    t.string  "title"
+    t.text    "body"
+    t.string  "location"
+    t.date    "date"
+    t.time    "start_time"
+    t.time    "end_time"
+    t.integer "agenda_id"
+    t.integer "user_id"
   end
 
   create_table "questions", force: :cascade do |t|

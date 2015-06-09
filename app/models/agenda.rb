@@ -1,9 +1,10 @@
-class Question < ActiveRecord::Base
+class Agenda < ActiveRecord::Base
 	### RELATIONS ###
-	has_many :answers, dependent: :destroy
 	belongs_to :user
+	has_many :appointments
 
 	### VALIDATIONS ###
 	validates :title, presence: true
+	validates :color, presence: true
 	validates :user, presence: true
 end
