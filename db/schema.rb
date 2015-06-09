@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150401105655) do
+ActiveRecord::Schema.define(version: 20150414121220) do
 
   create_table "agendas", force: :cascade do |t|
     t.string  "title"
@@ -44,6 +44,42 @@ ActiveRecord::Schema.define(version: 20150401105655) do
     t.integer  "user_id"
   end
 
+  create_table "test_answers", force: :cascade do |t|
+    t.string  "value"
+    t.integer "test_question_id"
+    t.boolean "correct_answer"
+  end
+
+  create_table "test_questions", force: :cascade do |t|
+    t.string  "title"
+    t.integer "test_id"
+    t.integer "correct_answer_id"
+  end
+
+  create_table "test_session_answers", force: :cascade do |t|
+    t.integer "test_session_id"
+    t.integer "test_answer_id"
+  end
+
+  create_table "test_session_questions", force: :cascade do |t|
+    t.integer "test_session_id"
+    t.integer "test_answer_id"
+  end
+
+  create_table "test_sessions", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "test_id"
+    t.integer  "result"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "tests", force: :cascade do |t|
+    t.string  "title"
+    t.text    "body"
+    t.integer "user_id"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
     t.string   "encrypted_password",     default: "", null: false
@@ -57,6 +93,7 @@ ActiveRecord::Schema.define(version: 20150401105655) do
     t.string   "last_sign_in_ip"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.boolean  "teacher"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true

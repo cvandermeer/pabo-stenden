@@ -1,0 +1,31 @@
+<h2><%= @test.title %></h2>
+<p>
+	<%= @test.body %>
+</p>
+
+<ul>
+	
+	<% @test.test_questions.each do |test_question| %>
+	<h3>Vraag</h3>
+		<li>
+			<%= test_question.title %> 
+			<% if test_question.test_answers.any? %>
+			<ul>
+				<h4>Antwoorden</h4>
+				<% test_question.test_answers.each do |test_answer| %>
+					<li>
+						<%= test_answer.value %>
+						<%= '\/' if test_answer.correct_answer %>
+					</li>
+				<% end %>
+			</ul> 
+			<% end %>
+		</li>
+	<% end %>
+</ul>
+
+<% if @test.user == current_user %>
+	<%= link_to 'Edit', edit_test_path(@test) %>
+<% end %>
+
+<%= link_to 'Make the test', take_test_path(@test) %>

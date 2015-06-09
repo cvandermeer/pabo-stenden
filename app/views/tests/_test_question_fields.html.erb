@@ -1,0 +1,12 @@
+<div class="js-checkbox-container">
+<%= f.text_field :title %>
+<%= f.link_to_remove 'Verwijder vraag' %> 
+
+<%= f.fields_for :test_answers do |test_answer| %>
+	<%= render 'test_answers_fields', f: test_answer %> 
+<% end %>
+
+<p>
+	<%= f.link_to_add 'Antwoord toevoegen', :test_answers %>
+</p>
+</div>
