@@ -8,4 +8,6 @@ class User < ActiveRecord::Base
   has_many :answers
   has_many :agendas
   has_many :appointments
+  has_many :tests, dependent: :destroy
+  has_many :test_sessions
 end
